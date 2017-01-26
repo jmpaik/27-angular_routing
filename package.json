@@ -12,10 +12,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jmpaik/27-angular_routing/issues"
-  },
-  "homepage": "https://github.com/jmpaik/27-angular_routing#readme",
   "dependencies": {
     "angular": "^1.6.1",
     "angular-ui-router": "^0.4.2",
