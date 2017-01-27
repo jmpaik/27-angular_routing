@@ -1,4 +1,8 @@
 {
+"globals": {
+        "__DEBUG__": false,
+        "__API_URL__": false
+    },
   "rules": {
     "no-console": "off",
     "indent": [ "error", 2 ],

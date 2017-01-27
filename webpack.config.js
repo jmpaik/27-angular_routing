@@ -6,9 +6,9 @@ const HTMLPlugin = require('html-webpack-plugin');
 const CleanPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const production = process.env.NODE_ENV === 'production';
-
 dotenv.load();
+
+const production = process.env.NODE_ENV === 'production';
 
 let plugins = [
   new ExtractTextPlugin('bundle.css'),
@@ -55,6 +55,10 @@ module.exports = {
       },
       {
         test: /\.(woff|tt|svg|eot).*/,
+        loader: 'url?limit=10000&name=image/[hash].[ext]'
+      },
+      {
+        test: /\.(jpg|jpeg|svg|bmp|tiff|gif|png)$/,
         loader: 'url?limit=10000&name=image/[hash].[ext]'
       },
       {

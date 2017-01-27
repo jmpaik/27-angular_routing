@@ -3,9 +3,12 @@
 module.exports = ['$stateProvider', '$urlRouterProvider', routerConfig];
 
 function routerConfig($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.when('/', '/home');
+  $urlRouterProvider.when('', '/join#signup');
+  $urlRouterProvider.when('/', '/join#signup');
+  $urlRouterProvider.when('/signup', '/join#signup');
+  $urlRouterProvider.when('/signin', '/join#signin');
 
-  let routes = [
+  let states = [
     {
       name: 'home',
       url: '/home',
@@ -14,22 +17,29 @@ function routerConfig($stateProvider, $urlRouterProvider) {
       controllerAs: 'homeCtrl'
     },
     {
-      name: 'signup',
-      url: '/signup',
-      template: require('../view/signup/signup.html'),
-      controller: 'SignupController',
-      controllerAs: 'signupCtrl'
-    },
-    {
-      name: 'gallery',
-      url: '/gallery',
-      template: require('../view/gallery/gallery.html'),
-      controller: 'GalleryController',
-      controllerAs: 'galleryCtrl'
+      name: 'landing',
+      url: '/join',
+      template: require('../view/landing/landing.html'),
+      conroller: 'LandingController',
+      controllerAs: 'landingCtrl'
     }
+    // {
+    //   name: 'signup',
+    //   url: '/signup',
+    //   template: require('../view/signup/signup.html'),
+    //   controller: 'SignupController',
+    //   controllerAs: 'signupCtrl'
+    // },
+    // {
+    //   name: 'gallery',
+    //   url: '/gallery',
+    //   template: require('../view/gallery/gallery.html'),
+    //   controller: 'GalleryController',
+    //   controllerAs: 'galleryCtrl'
+    // }
   ];
 
-  routes.forEach( route => {
-    $stateProvider.state(route);
+  states.forEach( state => {
+    $stateProvider.state(state);
   });
 }
