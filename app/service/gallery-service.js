@@ -26,6 +26,7 @@ function galleryService($q, $log, $http, authService) {
     })
     .then( res => {
       $log.log('gallery created');
+
       let gallery = res.data;
       service.galleries.unshift(gallery);
       return gallery;
@@ -37,6 +38,8 @@ function galleryService($q, $log, $http, authService) {
   };
 
   service.deleteGalleries = function(galleryID, galleryData) {
+    $log.debug('galleryService.deleteGalleries()');
+
     return authService.getToken()
     .then( token => {
       let url = `${__API_URL__}/api/gallery/${galleryID}`;
@@ -46,6 +49,7 @@ function galleryService($q, $log, $http, authService) {
           Authorization: `Bearer ${token}`
         }
       };
+      return $http.delete(url, config);
     });
   };
 
@@ -61,7 +65,6 @@ function galleryService($q, $log, $http, authService) {
           Authorization: `Bearer ${token}`
         }
       };
-
       return $http.get(url, config);
     })
     .then( res => {
@@ -74,6 +77,5 @@ function galleryService($q, $log, $http, authService) {
       return $q.reject(err);
     });
   };
-
   return service;
 }

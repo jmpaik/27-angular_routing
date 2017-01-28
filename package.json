@@ -2,7 +2,7 @@
   "name": "27-angular_routing",
   "version": "1.0.0",
   "description": "",
-  "main": "webpack.config.js",
+  "main": "index.js",
   "scripts": {
     "build": "./node_modules/webpack/bin/webpack.js",
     "build-watch": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot",
@@ -25,6 +25,7 @@
     "camelcase": "^4.0.0",
     "clean-webpack-plugin": "^0.1.15",
     "css-loader": "^0.26.1",
+    "dotenv": "^4.0.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
     "html-loader": "^0.4.4",
@@ -34,12 +35,12 @@
     "resolve-url-loader": "^1.6.1",
     "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",
+    "ui-router": "^1.0.0-alpha.3",
     "url-loader": "^0.5.7",
     "webpack": "^1.14.0"
   },
   "devDependencies": {
     "angular-mocks": "^1.6.1",
-    "dotenv": "^4.0.0",
     "eslint": "^3.14.1",
     "jasmine-core": "^2.5.2",
     "karma": "^1.4.0",
