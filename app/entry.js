@@ -11,7 +11,6 @@ const ngTouch = require('angular-touch');
 const ngAnimate = require('angular-animate');
 
 const cfgram = angular.module('cfgram', [ngTouch, ngAnimate, uiRouter]);
-// const routesApp = angular.module('routesApp', [uiRouter]);
 
 let context = require.context('./config/', true, /\.js$/);
 context.keys().forEach( path => {
