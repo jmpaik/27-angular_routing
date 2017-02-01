@@ -3,14 +3,15 @@
 require('./scss/main.scss');
 
 const path = require('path');
+const angular = require('angular');
 const camelcase = require('camelcase');
 const pascalcase = require('pascalcase');
-const angular = require('angular');
 const uiRouter = require('angular-ui-router');
 const ngTouch = require('angular-touch');
 const ngAnimate = require('angular-animate');
+const ngFileUpload = require('ng-file-upload');
 
-const cfgram = angular.module('cfgram', [ngTouch, ngAnimate, uiRouter]);
+const cfgram = angular.module('cfgram', [ngTouch, ngAnimate, uiRouter, ngFileUpload]);
 
 let context = require.context('./config/', true, /\.js$/);
 context.keys().forEach( path => {
